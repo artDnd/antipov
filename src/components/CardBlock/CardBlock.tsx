@@ -1,15 +1,15 @@
 import { UnknownAction } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { API_URL } from '../../const'
 import { fetchCards, selectCards } from '../../store/slices/cardSlice'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { Skeleton } from '../Skeleton/Skeleton'
 import { Card } from './Card/Card'
 import styles from './CardBlock.module.scss'
 
 export function CardBlock() {
-	const API_URL = 'https://reqres.in/api/users?page=1'
-	const dispatch = useDispatch()
-	const { cards, isLoading } = useSelector(selectCards)
+	const dispatch = useAppDispatch()
+	const { cards, isLoading } = useAppSelector(selectCards)
 	const cardElement = cards.map(card => <Card key={card.id} card={card} />)
 
 	useEffect(() => {

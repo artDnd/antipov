@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { useAuth } from './components/hooks/isAuth'
+import { useAuth } from './components/hooks/useAuth'
 import { LoginPage } from './pages/Auth/LoginPage'
 import { RegisterPage } from './pages/Auth/RegisterPage'
 import { HomePage } from './pages/Home/HomePage'
@@ -8,7 +8,6 @@ import { PersonPage } from './pages/Person/PersonPage'
 
 function App() {
 	const { isAuth } = useAuth()
-	console.log(isAuth)
 	return (
 		<Routes>
 			{isAuth ? (

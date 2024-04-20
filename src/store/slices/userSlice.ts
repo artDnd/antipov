@@ -1,25 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { UserType } from '../../types'
 
-const initialState: UserType = {
-	email: null,
-	token: null,
-	id: null,
+const initialState = {
+	user: null as null | UserType,
 }
 
 const UserSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		setUser: (state: UserType, action) => {
-			state.email = action.payload.email
-			state.token = action.payload.token
-			state.id = action.payload.id
+		setUser: (state, action) => {
+			state.user = action.payload
 		},
-		removeUser: (state: UserType) => {
-			state.email = null
-			state.token = null
-			state.id = null
+		removeUser: state => {
+			state.user = null
 		},
 	},
 })

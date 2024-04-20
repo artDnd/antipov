@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { useAppSelector } from '../../components/hooks/hooks'
 import { PersonCard } from '../../components/PersonCard/PersonCard'
 import { selectCards } from '../../store/slices/cardSlice'
 
 export function PersonPage() {
-	const { cards } = useSelector(selectCards)
+	const { cards } = useAppSelector(selectCards)
 	const { id } = useParams()
 	const currentCard = cards
 		.filter(card => card.id == Number(id))

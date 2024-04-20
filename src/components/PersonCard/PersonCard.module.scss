@@ -25,6 +25,12 @@
 			display: none;
 			font-size: 30px;
 		}
+		.person__btn_exit {
+			padding: 10px 20px;
+			background-color: transparent;
+			border: 1px solid #fff;
+			border-radius: 8px;
+		}
 	}
 
 	.person__info {
@@ -36,6 +42,7 @@
 		padding: 20px;
 		.person__info__desc {
 			width: 60%;
+			padding-left: 250px;
 		}
 		.person__info__contact {
 			width: 40%;
@@ -62,6 +69,7 @@
 	}
 	.person__info__desc {
 		width: 75% !important;
+		padding-left: 0 !important;
 	}
 	.person__info__contact {
 		width: 25% !important;

@@ -8,14 +8,20 @@
 	.header__btn_wrapper {
 		display: flex;
 		justify-content: end;
+		.header__btn_exit {
+			padding: 10px 20px;
+			background-color: transparent;
+			border: 1px solid #fff;
+			border-radius: 8px;
+		}
 	}
+
 	.header__btn_wrapper_media {
 		display: none;
 		justify-content: end;
 
 		.header__btn_media {
 			font-size: 30px;
-
 			background-color: transparent;
 			width: 30px;
 			height: 30px;

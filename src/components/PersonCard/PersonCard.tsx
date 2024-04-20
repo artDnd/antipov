@@ -1,23 +1,22 @@
 import { IoMdExit } from 'react-icons/io'
 import { LuArrowLeft } from 'react-icons/lu'
 import { MdOutlineEmail } from 'react-icons/md'
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeUser } from '../../store/slices/userSlice'
 import { CardType } from '../../types'
-import { BackButton } from '../Buttons/BackButton'
+import { useAppDispatch } from '../hooks/hooks'
 import styles from './PersonCard.module.scss'
 
 interface CardProps {
 	card: CardType
 }
 export function PersonCard({ card }: CardProps) {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	return (
 		<div className={styles.person}>
 			<div className={styles.person__header}>
 				<Link className={styles.person__btn} to={'/'}>
-					<BackButton title='Назад' />
+					<button className={styles.person__btn_exit}>Назад</button>
 				</Link>
 				<Link className={styles.person__btn_media} to={'/'}>
 					<LuArrowLeft />
@@ -36,7 +35,7 @@ export function PersonCard({ card }: CardProps) {
 					className={styles.person__btn}
 					onClick={() => dispatch(removeUser())}
 				>
-					<BackButton title='Выход' />
+					<button className={styles.person__btn_exit}>Выход</button>
 				</span>
 
 				<Link className={styles.person__btn_media} to={'/'}>

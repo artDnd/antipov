@@ -1,7 +1,6 @@
 import { IoMdExit } from 'react-icons/io'
 import { useDispatch } from 'react-redux'
 import { removeUser } from '../../store/slices/userSlice'
-import { BackButton } from '../Buttons/BackButton'
 
 import styles from './Header.module.scss'
 
@@ -13,7 +12,7 @@ export function Header() {
 				className={styles.header__btn_wrapper}
 				onClick={() => dispatch(removeUser())}
 			>
-				<BackButton title='Выход' />
+				<button className={styles.header__btn_exit}>Выход</button>
 			</span>
 			<span className={styles.header__btn_wrapper_media}>
 				<button
