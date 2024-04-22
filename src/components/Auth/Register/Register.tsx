@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { AiOutlineEye } from 'react-icons/ai'
 import { LuEyeOff } from 'react-icons/lu'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAppDispatch } from '../../../hooks/redux'
 import { setUser } from '../../../store/slices/userSlice'
-import { useAppDispatch } from '../../hooks/hooks'
 import styles from '../Form.module.scss'
 
 export function Register() {
@@ -24,9 +24,13 @@ export function Register() {
 		password: string,
 		confirmPassword: string
 	) => {
-		const auth = getAuth()
-		const { user } = await createUserWithEmailAndPassword(auth, email, password)
 		try {
+			const auth = getAuth()
+			const { user } = await createUserWithEmailAndPassword(
+				auth,
+				email,
+				password
+			)
 			if (password == confirmPassword) {
 				console.log(user)
 				dispatch(

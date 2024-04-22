@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { AiOutlineEye } from 'react-icons/ai'
 import { LuEyeOff } from 'react-icons/lu'
 import { Link, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../../hooks/hooks'
-import { useBoolean } from '../../hooks/useBoolean'
+import { useAppDispatch } from '../../../hooks/redux'
+import { useBoolean } from '../../../hooks/useBoolean'
 import styles from '../Form.module.scss'
 
 export function Login() {
@@ -19,8 +19,8 @@ export function Login() {
 	const { visible, toggle } = useBoolean(false)
 
 	const handleLogin = async (email: string, password: string) => {
-		const { user } = await signInWithEmailAndPassword(auth, email, password)
 		try {
+			const { user } = await signInWithEmailAndPassword(auth, email, password)
 			dispatch(
 				setUser({
 					email: user.email,

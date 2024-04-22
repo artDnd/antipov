@@ -2,9 +2,9 @@ import { IoMdExit } from 'react-icons/io'
 import { LuArrowLeft } from 'react-icons/lu'
 import { MdOutlineEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import { useAppDispatch } from '../../hooks/redux'
 import { removeUser } from '../../store/slices/userSlice'
 import { CardType } from '../../types'
-import { useAppDispatch } from '../hooks/hooks'
 import styles from './PersonCard.module.scss'
 
 interface CardProps {

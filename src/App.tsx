@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { useAuth } from './components/hooks/useAuth'
+import { useAuth } from './hooks/useAuth'
 import { LoginPage } from './pages/Auth/LoginPage'
 import { RegisterPage } from './pages/Auth/RegisterPage'
 import { HomePage } from './pages/Home/HomePage'

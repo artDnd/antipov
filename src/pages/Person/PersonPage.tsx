@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
-import { useAppSelector } from '../../components/hooks/hooks'
 import { PersonCard } from '../../components/PersonCard/PersonCard'
+import { useAppSelector } from '../../hooks/redux'
 import { selectCards } from '../../store/slices/cardSlice'
 
 export function PersonPage() {
