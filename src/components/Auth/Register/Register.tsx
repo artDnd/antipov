@@ -14,7 +14,7 @@ export function Register() {
 	const [pass, setPass] = useState('')
 	const [confirmPass, setConfirmPass] = useState('')
 	const [visible, setVisible] = useState(false)
-
+	const [error, setError] = useState('')
 	const toggleVisible = () => {
 		setVisible(prev => !prev)
 	}
@@ -42,7 +42,7 @@ export function Register() {
 				navigate('/')
 			}
 		} catch (error) {
-			console.log(error)
+			setError('Ошибка!')
 		}
 	}
 
@@ -73,6 +73,7 @@ export function Register() {
 						placeholder='example@mail.ru'
 						className={styles.form__block_input}
 					/>
+					{error && <p style={{ color: 'red' }}>{error}</p>}
 				</label>
 				<label htmlFor='password'>
 					Пароль

@@ -17,6 +17,7 @@ export function Login() {
 	const [email, setEmail] = useState('')
 	const [pass, setPass] = useState('')
 	const { visible, toggle } = useBoolean(false)
+	const [error, setError] = useState('')
 
 	const handleLogin = async (email: string, password: string) => {
 		try {
@@ -29,8 +30,10 @@ export function Login() {
 				})
 			)
 			navigate('/')
-		} catch (error) {
-			console.log(error)
+		} catch (err) {
+			// const error = err as Error
+			// setError(error.message)
+			setError('Ошибка!')
 		}
 	}
 	return (
@@ -48,6 +51,7 @@ export function Login() {
 						placeholder='example@mail.ru'
 						className={styles.form__block_input}
 					/>
+					{error && <p style={{ color: 'red' }}>{error}</p>}
 				</label>
 				<label htmlFor='password'>
 					Пароль
