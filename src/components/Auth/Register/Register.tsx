@@ -32,12 +32,11 @@ export function Register() {
 				password
 			)
 			if (password == confirmPassword) {
-				console.log(user)
 				dispatch(
 					setUser({
 						email: user.email,
 						id: user.uid,
-						token: user.accessToken,
+						token: (user as unknown as { accessToken: string }).accessToken,
 					})
 				)
 				navigate('/')

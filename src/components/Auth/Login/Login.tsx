@@ -25,7 +25,7 @@ export function Login() {
 				setUser({
 					email: user.email,
 					id: user.uid,
-					token: user.accessToken,
+					token: (user as unknown as { accessToken: string }).accessToken,
 				})
 			)
 			navigate('/')
